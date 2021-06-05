@@ -2,9 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="Factory" target="15" />
+      <module name="Factory.test" target="15" />
       <module name="Singleton" target="15" />
       <module name="Singleton.main" target="15" />
       <module name="Singleton.test" target="15" />
+      <module name="Strategy" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>

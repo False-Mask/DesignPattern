@@ -1,0 +1,3 @@
+interface TravelStrategy {
+    fun travel()
+}

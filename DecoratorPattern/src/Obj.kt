@@ -1,0 +1,3 @@
+interface Obj {
+    fun dance()
+}

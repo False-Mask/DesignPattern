@@ -1,17 +1,14 @@
-import app.APP
-import pc.func.BusinessAPPImp
-import pc.HuaweiPC
-import pc.PC
-import pc.func.GameAppImp
-
-class Main {
-
-}
+import static_proxy.concrete.Client
+import static_proxy.concrete.ConcreteImplementorA
+import static_proxy.concrete.ConcreteImplementorB
+import static_proxy.concrete.RefinedAbstraction
 
 fun main() {
-    val pc:PC = HuaweiPC(BusinessAPPImp(APP("hh","business")))
-    pc.runApp()
-    println("----------------------------------------------------------------")
-    pc.pcImp = GameAppImp(APP("王者农药","game"))
-    pc.runApp()
+    val client = Client()
+    val impl1:Implementor = ConcreteImplementorA()
+    val impl2:Implementor = ConcreteImplementorB()
+    val abstraction:Abstraction = RefinedAbstraction(impl1)
+    client.useOperation(abstraction)
+    abstraction.impl = impl2
+    client.useOperation(abstraction)
 }

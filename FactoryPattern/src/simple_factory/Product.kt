@@ -1,4 +1,4 @@
 package simple_factory
 
-class Product {
+abstract class Product(var name:String) {
 }

@@ -1,12 +1,15 @@
-class Main {
-    var travelStrategy:TravelStrategy? = null
-    fun travel(){
-        travelStrategy?.travel()
-    }
-}
+import static_proxy.concrete.ConcreteAlgorithmA
+import static_proxy.concrete.ConcreteAlgorithmB
 
 fun main() {
-    val main = Main()
-    main.travelStrategy = TravelByBike()
-    main.travelStrategy?.travel()
+
+    val strategyA = ConcreteAlgorithmA()
+    val strategyB = ConcreteAlgorithmB()
+
+    val context = Context(strategyA)
+
+    context.algorithm()
+    context.strategy = strategyB
+    context.algorithm()
+
 }

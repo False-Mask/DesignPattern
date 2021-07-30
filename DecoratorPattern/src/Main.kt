@@ -1,14 +1,20 @@
-import clothes.FashionDecorator
-import watch.HuaWeiWatch
-import watch.XiaoMiWatch
-
-class Main {
-}
+import static_proxy.concrete.component.ConcreteComponent
+import static_proxy.concrete.decorate.ConcreteDecoratorA
+import static_proxy.concrete.decorate.ConcreteDecoratorB
 
 fun main() {
-    val people = People()
-    val fashionDecorator = FashionDecorator(people)
-    val huaWeiWatch = HuaWeiWatch(fashionDecorator)
-    val xiaoMiWatch = XiaoMiWatch(huaWeiWatch)
-    xiaoMiWatch.dance()
+    val component = ConcreteComponent()
+    val decoratorA:Decorator = ConcreteDecoratorA(component)
+    val decoratorB:Decorator = ConcreteDecoratorB(component)
+    //可以扩展属性
+    decoratorA.operate()
+    println("---------------------")
+    //可以扩展方法
+    decoratorB.operate()
+    println("---------------------")
+    //还可以嵌套扩展。
+    val decoratorAPlusB = ConcreteDecoratorA(
+        decoratorB
+    )
+    decoratorAPlusB.operate()
 }

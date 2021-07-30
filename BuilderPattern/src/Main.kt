@@ -1,23 +1,16 @@
-import way2.PersonBuilderImp
-import java.util.*
-
-class Main {
-}
+import static_proxy.concrete.builder.ConcreteBuilder
 
 fun main() {
-    val person1 = PersonBuilderImp()
-        .setAge(19)
-        .setHeight(10000)
-        .setWeight(10000000000)
-        .setName("HaHa~")
+
+
+    val concreteProduce = ConcreteBuilder(1,2L,3.0)
+        .setOption1("Hello")
+        .setOption2(4f)
+        .setOption3('A')
+        .setOption4(1)
+        .setOption5(100)
+        .setOption6(false)
         .build()
 
-    val person2 = way1.Person.PersonBuilder()
-        .setAge(20)
-        .setHeight(10000)
-        .setWeight(10000000000)
-        .setName("HaHa~")
-        .build()
-    println(person1)
-    println(person2)
+    println("${concreteProduce.option1} ${concreteProduce.option6}")
 }
